@@ -35,8 +35,8 @@ public class BestellungController {
 		
 	}
 
-	// Get Request fragt eine Bestellung anhand der generierten URL ab
-	@GetMapping(path = "/bestellungId", produces = "application/json")
+	// Get Request fragt eine Bestellung anhand der generierten ID ab
+	@GetMapping(path = "/bestellungId")
 	public @ResponseBody Bestellung bestellungId(@RequestParam int bestellungId) {
 		return bestellungRepository.findById(bestellungId);
 	}

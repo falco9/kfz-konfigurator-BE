@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,6 +30,7 @@ public class Auto {
 	public boolean sitzheizung;
 	public int preis;
 
+	@JsonIgnore
 	@OneToOne(mappedBy = "auto", cascade = CascadeType.ALL)
 	private Bestellung bestellung;
 
